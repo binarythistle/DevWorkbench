@@ -21,6 +21,7 @@ steps:
   displayName: 'dotnet publish'
   inputs:
     command: publish
+    publishWebProjects: true
     projects: 'src/DevWorkbench/*.csproj'
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
 
