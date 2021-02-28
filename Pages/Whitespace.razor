@@ -1,0 +1,15 @@
+@page "/whitespace"
+
+<h1>Remove Whitespace</h1>
+
+
+
+<div class="form-group row">
+    <textarea id="whitearea" class="form-control col-md-6" @bind="Body" @oninput="OnInput"></textarea>
+</div>
+<div class="form-group row">
+    <p>Character count: @currentCount</p>
+</div>
+<div class="form-group row">
+    <button class="btn btn-primary" @onclick="RemoveWhiteSpace">Remove Whitespace</button>
+</div>
