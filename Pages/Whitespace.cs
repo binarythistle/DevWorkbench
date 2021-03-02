@@ -10,8 +10,12 @@ namespace DevWorkBench.Pages
 
         private void RemoveWhiteSpace()
         {
-            Body = String.Concat(Body.Where(c => !Char.IsWhiteSpace(c)));
-            currentCount = Body.Length;
+            if (Body != null)
+            {
+                Body = String.Concat(Body.Where(c => !Char.IsWhiteSpace(c)));
+                currentCount = Body.Length;
+            }
+            
         }
 
         public void OnInput(Microsoft.AspNetCore.Components.ChangeEventArgs args)
