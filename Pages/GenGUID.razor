@@ -1,0 +1,12 @@
+@page "/genguid"
+
+<h1>Generate GUID</h1>
+
+
+
+<div class="form-group row">
+    <textarea id="whitearea" class="form-control col-md-6" @bind-value="Body" @bind-value:event="oninput"></textarea>
+</div>
+<div class="form-group row">
+    <button class="btn btn-primary" @onclick="GenerateGUID">Generate GUID</button>
+</div>
