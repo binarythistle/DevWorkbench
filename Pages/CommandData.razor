@@ -1,0 +1,32 @@
+@page "/commanddata"
+
+<h1>Query Commands</h1>
+
+@if(Result == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Platform</th>
+                <th>How to...</th>
+                <th>Command Line</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var command in Result)
+            {
+                <tr>
+                    <td>@command.Platform.Name</td>
+                    <td>@command.HowTo</td>
+                    <td>@command.CommandLine</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}
