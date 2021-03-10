@@ -21,7 +21,7 @@ namespace DevWorkBench
             //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             builder.Services.AddHttpClient<ICommandDataService, CommandDataService>
-                (client => client.BaseAddress = new Uri("https://localhost:6001/"));
+                (client => client.BaseAddress = new Uri(builder.Configuration["httpsgraphqlcommandapi"]));
 
             await builder.Build().RunAsync();
         }
