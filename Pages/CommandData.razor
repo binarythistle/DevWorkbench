@@ -2,6 +2,20 @@
 
 <h1>Query Commands</h1>
 
+<div class="form-group">
+    <input id="commandquery" class="form-control col-md-6" placeholder="what you looking for?"  @bind-value="SearchCriteria" @bind-value:event="oninput" />
+    <small class="form-text text-muted">Search for command, platform or how to description.</small>
+</div>
+
+<hr/>
+
+
+
+<button class="btn btn-primary" type="button" @onclick="QueryAPI">
+    <i class="oi oi-magnifying-glass"></i> Search</button>
+
+<br/>
+
 @if(Result == null)
 {
     <p><em>Loading...</em></p>

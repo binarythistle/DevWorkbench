@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using DevWorkBench.DataServices;
 using DevWorkBench.Models;
@@ -7,6 +8,9 @@ namespace DevWorkBench.Pages
 {
     public partial class CommandData
     {
+
+        public string SearchCriteria { get; set; }
+
         [Inject]
         public ICommandDataService CommandDataService {get; set;}
 
@@ -17,6 +21,11 @@ namespace DevWorkBench.Pages
             Result = await CommandDataService.GetAllCommandsGraphQL();
         }
 
-        
+        private async Task QueryAPI()
+        {
+            Console.WriteLine($"-> Search Criteria: {SearchCriteria}");
+
+            Result = await CommandDataService.GetSelectedCommandsGraphQL(SearchCriteria);
+        }
     }
 }
