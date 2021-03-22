@@ -43,7 +43,8 @@ namespace DevWorkBench.DataServices
         public async Task<Command[]> GetSelectedCommandsGraphQL(string cmdQuery)
         {
             var queryObject = new{
-                query = "query{command(where: {howTo : {contains: \"" + cmdQuery + "\"}}){id howTo commandLine platform{name}}}",
+                //query = "query{command(where: {howTo : {contains: \"" + cmdQuery + "\"}}){id howTo commandLine platform{name}}}",
+                query = "query{command(where: {or: [ {howTo: {contains:  \"" + cmdQuery + "\"}} {commandLine: {contains:  \"" + cmdQuery + "\"}} {platform: {name: {contains:  \"" + cmdQuery + "\"}}} ]} ){id howTo commandLine platform{name}}}",
                 variables = new { }
             };
 

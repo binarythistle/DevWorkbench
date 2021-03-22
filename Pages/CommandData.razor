@@ -18,7 +18,11 @@
 
 @if(Result == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em></em></p>
+}
+else if(Result.Length == 0)
+{
+    <p><em>No results...</em></p>
 }
 else
 {

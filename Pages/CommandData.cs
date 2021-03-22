@@ -16,10 +16,10 @@ namespace DevWorkBench.Pages
 
         public Command[] Result {get; set;}
 
-        protected override async Task OnInitializedAsync()
-        {
-            Result = await CommandDataService.GetAllCommandsGraphQL();
-        }
+        // protected override async Task OnInitializedAsync()
+        // {
+        //     Result = await CommandDataService.GetAllCommandsGraphQL();
+        // }
 
         private async Task QueryAPI()
         {
